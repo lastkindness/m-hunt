@@ -1,0 +1,56 @@
+.service {
+  &-banner {
+    &-video {
+      .video {
+        height: auto;
+        align-items: center;
+        &-block {
+          position: absolute;
+          &-image {
+            top: 0;
+            left: 0;
+            transform: unset;
+          }
+          &-icon {
+            width: 80px;
+            height: 80px;
+            box-shadow: 0 0 0 10px transparentize($white, 0.7);
+            @include anim;
+            &:before {
+              font-size: 25px;
+            }
+            &:after {
+              display: inline-block;
+              content: "";
+              position: absolute;
+              width: 150%;
+              height: 150%;
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(1.0);
+              background-color: transparentize($white, 0.9);
+              @include anim;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+              box-shadow: 0 0 0 12px transparentize($white, 0.7);
+              &:after {
+                @include anim;
+                transform: translate(-50%, -50%) scale(1.1);
+              }
+            }
+          }
+        }
+      }
+      .service-banner {
+        &__image {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

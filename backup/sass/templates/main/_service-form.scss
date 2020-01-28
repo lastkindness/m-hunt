@@ -1,0 +1,111 @@
+.service {
+  &-form {
+    background-color: $elements;
+    width: 30%;
+    border-radius: 16px;
+    padding: 35px 35px 45px;
+    position: relative;
+    overflow: hidden;
+    @include  respond-to(lg-1200) {
+      width: 100%;
+    }
+    &:after {
+      position: absolute;
+      z-index: 0;
+      width: 101%;
+      height: 101%;
+      mask-mode: alpha !important;
+      -webkit-mask-repeat: no-repeat !important;
+      mask-repeat: no-repeat !important;
+      -webkit-mask-size: cover !important;
+      mask-size: cover !important;
+      mask-position: 50% 50% !important;
+      -webkit-mask-position: 50% 50% !important;
+      background-color: $white;
+      -webkit-mask-image: url("../images/svg-parts/circle-mask.svg");
+      mask-image: url("../images/svg-parts/circle-mask.svg");
+      display: block;
+      content: "";
+      top: -50%;
+      right: 0;
+      @include  respond-to(lg-1200) {
+        mask-position: 50% 100% !important;
+        -webkit-mask-position: 50% 100% !important;
+      }
+    }
+    &__logo {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      .logo {
+        display: flex;
+        width: 45px;
+        height: 58px;
+        mask-mode: alpha !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-repeat: no-repeat !important;
+        -webkit-mask-size: contain !important;
+        mask-size: contain !important;
+        mask-position: 50% 50% !important;
+        -webkit-mask-position: 50% 50% !important;
+        background-color: $white;
+        margin: 0 auto;
+      }
+    }
+    &__title {
+      position: relative;
+      z-index: 1;
+      @include fxb;
+      font-size: 32px;
+      text-align: center;
+      color: $white;
+      margin-bottom: 30px;
+    }
+    &__form {
+      position: relative;
+      z-index: 1;
+      .input-container {
+        input, textarea, select {
+          background-color: transparent;
+          padding: 5px;
+          border: none;
+          border-bottom: 1px solid white;
+          border-radius: unset;
+          color: $white;
+          @include fb;
+          font-size: 16px;
+        }
+        label {
+          color: $white;
+          left: 0px;
+          &:after {
+            color: $white;
+          }
+        }
+        &:last-of-type {
+          margin-bottom: 20px;
+        }
+        &.active {
+          label {
+            color: $white;
+            top: -5px;
+          }
+        }
+      }
+      .text-error {
+        color: transparentize($white, 0.2)
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+    &__subtitle {
+      @include fm;
+      font-size: 14px;
+      line-height: 100%;
+      color: $white;
+      margin-bottom: 40px;
+      margin-top: -15px;
+    }
+  }
+}

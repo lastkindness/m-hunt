@@ -1,0 +1,208 @@
+//buttons start
+.btn{
+  padding: 20px 40px;
+  position: relative;
+  @include fb;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  background-color: $elements;
+  border: 2px solid $elements;
+  overflow: hidden;
+  border-radius: 60px;
+  color: $white;
+  text-transform: uppercase;
+  @include anim;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 1;
+    color: $white;
+    @include fb;
+  }
+  &:before {
+    width: 200px;
+    height: 200px;
+    background-color: $white;
+    position: absolute;
+    display: block;
+    content: "";
+    border-radius: 50%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.0);
+    @include anim;
+    z-index: 0;
+  }
+  @include respond-to(lg) {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px 30px;
+  }
+  @include respond-to(xs-690){
+    font-size: 12px;
+    line-height: 14px;
+    padding: 10px 20px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    @include anim;
+    cursor: pointer;
+    background-color: $action;
+    border: 2px solid $action;
+    span {
+      color: $action;
+      @include anim;
+    }
+    &:before {
+      top: -50%;
+      transform: translateX(-50%) scale(1.7);
+      @include anim;
+    }
+  }
+  &-transparent {
+    padding: 20px 40px;
+    background-color: transparentize($white, 0.92);
+    border: 2px solid $white;
+    @include anim;
+    span {
+      color: $white;
+      @include anim;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $white;
+      border: 2px solid $white;
+      @include anim;
+    }
+    @include respond-to(lg) {
+      padding: 15px 30px;
+    }
+    @include respond-to(xs-690) {
+      padding: 10px 20px;
+    }
+  }
+  &-white {
+    background-color: $white;
+    border: 2px solid $white;
+    color: $elements;
+    @include anim;
+    span,
+    a {
+      color: $elements;
+      @include anim;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $accent;
+      border: 2px solid $accent;
+      @include anim;
+    }
+  }
+  &-square {
+    background-color: transparentize($white, 0.92);
+    border: 2px solid transparent;
+    @include fm;
+    font-size: 16px;
+    line-height: 19px;
+    border-radius: 18px;
+    color: $white;
+    @include anim;
+    span,
+    a {
+      color: $white;
+      @include anim;
+      text-transform: none;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparentize($white, 0.72);
+      border: 2px solid transparentize($white, 0.72);
+      @include anim;
+    }
+  }
+  &_link {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: $text;
+    box-shadow: unset;
+    text-transform: unset;
+    display: inline-flex;
+    cursor: pointer;
+    @include anim;
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      box-shadow: unset;
+      @include anim;
+      span,
+      a {
+        color: $elements;
+        cursor: pointer;
+        @include anim;
+      }
+    }
+    span,
+    a {
+      order: 0;
+      color: $text;
+      @include anim;
+    }
+    &:before {
+      margin-left: 5px;
+      order: 1;
+      @include anim;
+    }
+    &-line {
+      color: $text;
+      overflow: visible;
+      &:hover,
+      &:active,
+      &:focus {
+        @include anim;
+        &:after {
+          @include anim;
+          max-width: 0;
+        }
+        &:before {
+          transform: translateX(5px);
+          @include anim;
+        }
+        span {
+          color: $text;
+          @include anim;
+        }
+      }
+      span {
+        font-size: 16px;
+        line-height: 16px;
+      }
+      &:after {
+        @include anim;
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: calc(100% - 25px);
+        height: 6px;
+        background-color: $elements;
+        max-width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+  &-center {
+    margin: 0 auto;
+  }
+}
+//buttons end

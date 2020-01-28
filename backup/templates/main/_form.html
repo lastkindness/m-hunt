@@ -1,0 +1,32 @@
+
+<section class="feedback-form">
+  <div class="container">
+    <div class="feedback-form__wrapper">
+      <div class="feedback-form__image"><img data-src="images/other/2.jpeg" alt="Консультация по услугам" title="Консультация по услугам"/></div>
+      <div class="feedback-form__main">
+        <div class="feedback-form__content">
+          <div class="feedback-form__title title-2">Консультация по услугам</div>
+          <p class="feedback-form__text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала</p>
+        </div>
+        <form class="feedback-form__form js_validate">
+          <div class="input-container">
+            <label for="head" class="req">Ваше имя</label>
+            <input id="head" type="text" name="head" required="required" data-validate="text" data-error-wrong="Недопустимые символы" data-error-empty="Введите колличество символов (2-100)" data-minsign="2" data-maxsign="100" class="validate"/>
+            <div class="text-error">Поле  не заполнено</div>
+          </div>
+          <div class="input-container">
+            <label for="phone" class="req">Номер телефона</label>
+            <input id="phone" type="tel" required="required" data-validate="phone" data-error-wrong="Поле «Телефон» заполнено не верно" data-error-empty="Введите колличество символов(17)" class="validate"/>
+            <div class="text-error">Поле  не заполнено</div>
+          </div>
+          <div class="input-container">
+            <label for="email" class="req">Email</label>
+            <input id="email" type="email" name="email" required="required" data-validate="email" data-error-wrong="Поле «Email» заполнено не верно" data-error-empty="Поле «Email» не заполнено" data-error-min="Email: не менее 6 символов" data-error-max="Email: не более 37 символов" class="validate"/>
+            <div class="text-error">Поле «Email» не заполнено</div>
+          </div>
+          <input value="Отправить" type="submit" class="btn"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+doctype html
+html
+  include components/_head
+  body
+    noscript
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript. Вот
+        a(href='https://artjoker.ua/ru/blog/how-to-enable-javascript/', target='_blank') инструкции,
+        | как включить JavaScript в вашем браузере.
+        link(rel='stylesheet', type='text/css', href='css/without-js.css')
+    // if lte IE 8
+    // p.off-js
+    // | Ваш браузер устарел, пожалуйста
+    // b обновите
+    // |  его.
+    // wrapper start
+    .wrapper.error-page
+      include components/_header
+      main.main
+        include components/_breadcrumbs
+        include components/_button
+        +breadcrumbs('Главная', 'Каталог', 'Карточка товара')
+        section.error
+          .container
+            .error__content
+              .error__image
+                .error__img
+                  img(data-src="images/content-icons/404.svg" alt="Error image" title="Error image")
+              .error__title.title-2 Страница не найдена
+              .error__text
+                p К сожалению страница не найдена. проверьте правильность набора адресса или вернитесь на главную
+              +button('На главную', 'a')(href='http://html.myapp.com.ua/m-hunt/index.html', data-target='registration', class="btn")
+      include components/_footer
+      include components/_popup
+    include components/_footer-include

@@ -1,0 +1,655 @@
+//header start
+.header {
+  background: linear-gradient(180deg, #000000 -37.55%, rgba(0, 0, 0, 0) 87.12%);
+  background-color: transparent;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 100%;
+  box-shadow: $box-shadow-none;
+  color: $white;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  @include anim;
+  @include respond-to(lg) {
+    padding: 0 30px;
+  }
+  @include respond-to(md) {
+    padding: 20px 30px;
+  }
+  @include respond-to(sm) {
+    padding: 20px 15px;
+  }
+  &:before {
+    width: 100%;
+    height: 2px;
+    background-image: url("../images/svg-parts/line1.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 99%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  &.is-hidden {
+    top: -155px;
+    @include anim;
+    @include respond-to(lg-1360) {
+      top: -170px;
+    }
+    @include respond-to(lg-1200) {
+      top: -180px;
+    }
+    @include respond-to(md) {
+      top: -100px;
+    }
+  }
+  &.is-move:not(.mobile-active),
+  &.static:not(.mobile-active) {
+    background: unset;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    @include anim;
+    .social {
+      &-item {
+        .icon {
+          color: $elements;
+        }
+      }
+    }
+    .header {
+      &__mobile {
+        .btn {
+          background-color: $elements;
+          @include anim;
+          .icon {
+            color: $white;
+            @include anim;
+          }
+        }
+        .burger {
+          span {
+            background-color: $elements;
+          }
+        }
+      }
+      &__main {
+        &-wrapper {
+          a {
+            color: $text;
+            @include anim;
+            &:hover,
+            &:active,
+            &:focus {
+              color: transparentize($text, 0.7);
+              @include anim;
+            }
+          }
+        }
+      }
+      &__phone {
+        margin: 0 10px;
+        .dropdown {
+          .icon {
+            color: $elements;
+            @include anim;
+            &:hover,
+            &:active,
+            &:focus {
+              color: transparentize($text, 0.7);
+              @include anim;
+            }
+          }
+          a {
+            color: $text;
+            @include anim;
+          }
+          &__dropdown {
+            border: 2px solid $footer-bg;
+            background-color: transparentize($footer-bg, 0.4);
+            padding: 10px 15px !important;
+            @include respond-to(lg-1360) {
+              background-color: transparentize($footer-bg, 0.1);
+            }
+            a {
+              color: $white;
+              @include anim;
+              &:hover,
+              &:active,
+              &:focus {
+                color: $accent;
+                @include anim;
+              }
+            }
+          }
+        }
+      }
+      &__logo {
+        .logo {
+          background-color: $elements;
+          color: $elements;
+          @include anim;
+          &:hover,
+          &:active,
+          &:focus {
+            color: transparentize($elements, 0.7);
+            background-color: transparentize($elements, 0.7);
+            @include anim;
+          }
+        }
+      }
+      &__menu {
+        &-buttons {
+          .btn {
+            @include anim;
+            background-color: $elements;
+            border: 2px solid $elements;
+            &:hover,
+            &:active,
+            &:focus {
+              background-color: transparentize($elements, 0.7);
+              border: 2px solid transparentize($elements, 0.7);
+              @include anim;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.mobile-active {
+    background: $footer-bg;
+    .header {
+      &__main {
+        overflow-y: auto;
+        background-color: $footer-bg;
+        border-top: 1px solid transparentize($white, 0.85);
+        padding: 30px 0;
+        .header {
+          &__logo {
+            display: none;
+          }
+        }
+        &-wrapper {
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          &:first-child {
+            padding: 0 0 30px;
+          }
+          &:last-child {
+            border-top: 1px solid transparentize($white, 0.85);
+            padding: 30px 0 0;
+          }
+          a,
+          span {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+      &__nav {
+        width: 100%;
+        padding-right: 0;
+        &-list {
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          &-drop {
+            position: static;
+            transform: unset;
+            width: 100%;
+            background-color: #132F44;
+            border-radius: 0;
+          }
+        }
+        &-item {
+          margin-right: 0;
+          padding: 12px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 100%;
+          &-drop {
+            &>a {
+              color: transparentize($white, 0.6) !important;
+              text-decoration: underline;
+              &:after {
+                display: none;
+              }
+            }
+          }
+          &.drop {
+            &.active {
+              &>a {
+                display: block;
+              }
+            }
+          }
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      &__phone {
+        padding: 0;
+        margin-bottom: 25px;
+        .dropdown {
+          &__link {
+            display: none;
+          }
+          .icon {
+            display: none;
+          }
+          &__dropdown {
+            display: block !important;
+            position: static;
+            transform: unset;
+          }
+        }
+      }
+    }
+    .social-list {
+      margin-bottom: 30px;
+    }
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 0;
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+  span {
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: auto;
+    }
+  }
+  &__mobile {
+    display: none;
+    @include respond-to(md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .btn {
+      padding: 20px;
+      border-radius: 50%;
+      &:before {
+        display: none;
+      }
+      .icon {
+        font-size: 20px;
+        color: $footer-bg;
+        @include anim;
+        @include respond-to(sm) {
+          font-size: 15px;
+        }
+      }
+      @include respond-to(sm) {
+        padding: 10px;
+      }
+    }
+  }
+  &__phone {
+    @include anim;
+    .dropdown {
+      &__dropdown {
+        min-width: 60px;
+        .dropdown__text {
+          justify-content: center;
+        }
+      }
+      &__wrapper {
+        @include anim;
+      }
+      .icon {
+        transition: 0s all;
+        color: $white;
+        transform: rotate(90deg);
+        margin-left: 5px;
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      .dropdown {
+        &__wrapper {
+          @include anim;
+          color: $accent;
+        }
+      }
+      .icon {
+        transition: 0s all;
+        color: $accent;
+      }
+    }
+    @include respond-to(lg-1200) {
+      flex-grow: 1;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 30px;
+    }
+  }
+  &__logo {
+    width: calc(30% - 70px);
+    height: auto;
+    text-align: center;
+    transform: scale(0.9);
+    @include anim;
+    .logo {
+      mask-mode: alpha !important;
+      -webkit-mask-repeat: no-repeat !important;
+      mask-repeat: no-repeat !important;
+      -webkit-mask-size: contain !important;
+      mask-size: contain !important;
+      mask-position: 50% 50% !important;
+      -webkit-mask-position: 50% 50% !important;
+      width: 100%;
+      height: 65px;
+      color: $white;
+      background-color: $white;
+      @include anim;
+      @include respond-to(lg-1200) {
+
+      }
+      @include respond-to(md) {
+
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      transform: scale(1.0);
+      @include anim;
+      .logo {
+        @include anim;
+        color: $accent;
+        background-color: $accent;
+      }
+    }
+    @include respond-to(lg-1360) {
+      width: calc(20% - 20px);
+    }
+    @include respond-to(lg-1200) {
+
+    }
+    @include respond-to(md) {
+      width: calc(25%);
+    }
+    @include respond-to(sm) {
+      width: calc(35%);
+    }
+    @include respond-to(xs-690) {
+      width: calc(45%);
+    }
+  }
+  &__burger {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    @include respond-to(md) {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+  &__main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 35px 0;
+      @include respond-to(lg) {
+        padding: 20px 0;
+      }
+      &:first-child {
+        width: 60%;
+        @include respond-to(lg) {
+          width: 55%;
+        }
+        @include respond-to(lg-1200) {
+          width: 100%;
+        }
+      }
+      &:last-child {
+        width: 40%;
+        @include respond-to(lg) {
+          width: 45%;
+        }
+        @include respond-to(lg-1200) {
+          width: 100%;
+        }
+      }
+      @include respond-to(lg-1200) {
+        padding: 10px 0;
+      }
+      a {
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        @include fm;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $accent;
+          @include anim;
+        }
+      }
+    }
+    @include respond-to(lg-1200) {
+      flex-wrap: wrap;
+    }
+    @include respond-to(md) {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: calc(100vh - 105px);
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &__nav {
+    width: 70%;
+    padding-right: 15px;
+    @include respond-to(lg) {
+      width: 75%;
+    }
+    @include respond-to(lg-1360) {
+      width: 80%;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+      &-drop {
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        display: none;
+        text-align: center;
+        border-radius: 16px;
+        border: 2px solid $footer-bg;
+        background-color: transparentize($footer-bg, 0.4);
+        padding: 10px 15px !important;
+        z-index: 10;
+        @include respond-to(lg-1360) {
+          top: calc(100%);
+          background-color: transparentize($footer-bg, 0.1);
+        }
+        &:before {
+          content: '';
+          height: 40px;
+          display: block;
+          left: 50%;
+          top: -25px;
+          width: 100%;
+          background-color: transparent;
+          transform: translateX(-50%);
+          position: absolute;
+          @include anim;
+          z-index: 2;
+        }
+      }
+      @include respond-to(lg-1200) {
+        justify-content: flex-end;
+      }
+    }
+    &-item {
+      margin-right: 50px;
+      position: relative;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        a,
+        span {
+          color: $elements;
+          @include anim;
+        }
+      }
+      .icon-arr {
+        display: none;
+      }
+      &.drop {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        .icon-arr {
+          display: flex;
+          transform: rotate(90deg);
+          @include anim;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          font-size: 10px;
+        }
+        &>a,
+        &>span {
+          margin-right: 10px;
+        }
+        &.active {
+          .icon-arr {
+            transform: rotate(270deg);
+            @include anim;
+          }
+        }
+      }
+      a,
+      span {
+        color: $white;
+        @include anim;
+        position: relative;
+        &:after {
+          width: 100%;
+          height: 3px;
+          background-color: $elements;
+          max-width: 0;
+          display: inline-block;
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          opacity: 0;
+          @include anim;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          @include anim;
+          &:after {
+            max-width: 100%;
+            @include anim;
+            opacity: 1;
+          }
+        }
+      }
+      &-drop {
+        padding: 5px 0;
+        a,
+        span {
+          color: $accent !important;
+          &:before {
+            display: none !important;
+          }
+        }
+      }
+      @include respond-to(lg-1700) {
+        margin-right: 30px;
+      }
+    }
+    .header {
+      &__burger {
+        display: block;
+      }
+    }
+  }
+  &__menu {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+      position: relative;
+      @include respond-to(lg-1200) {
+        padding: 10px 0;
+      }
+    }
+    &-buttons {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: auto;
+      .btn {
+        @include anim;
+        @include respond-to(lg-1700) {
+          padding: 20px;
+        }
+        @include respond-to(lg-1360) {
+          padding: 15px 10px;
+          font-size: 12px;
+        }
+        @include respond-to(lg-1200) {
+          padding: 15px 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .social {
+    &-list {
+      margin: 0 10px;
+    }
+  }
+}
+//header end

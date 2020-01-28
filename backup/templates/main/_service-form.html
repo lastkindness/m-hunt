@@ -1,0 +1,32 @@
+
+<div class="service-form auto-fix-sidebar">
+  <div class="service-form__logo">
+    <div style="-webkit-mask-image: url(images/logo-small.svg); mask-image: url(images/logo-small.svg);" class="logo"></div>
+  </div>
+  <div class="service-form__title">Оставить заявку</div>
+  <form action="#" class="service-form__form js_validate">
+    <div class="input-container">
+      <label for="name" class="req">Имя</label>
+      <input id="name" type="text" name="name" required="required" data-validate="text" data-error-wrong="Недопустимые символы" data-error-empty="Введите колличество символов (2-100)" data-minsign="2" data-maxsign="100" class="validate"/>
+      <div class="text-error">Поле  не заполнено</div>
+    </div>
+    <div class="input-container">
+      <label for="surname" class="req">Фамилия</label>
+      <input id="surname" type="text" name="surname" required="required" data-validate="text" data-error-wrong="Недопустимые символы" data-error-empty="Введите колличество символов (2-100)" data-minsign="2" data-maxsign="100" class="validate"/>
+      <div class="text-error">Поле  не заполнено</div>
+    </div>
+    <div class="input-container">
+      <label for="phone" class="req">Номер телефона</label>
+      <input id="phone" type="tel" required="required" data-validate="phone" data-error-wrong="Поле «Телефон» заполнено не верно" data-error-empty="Введите колличество символов(17)" class="validate"/>
+      <div class="text-error">Поле  не заполнено</div>
+    </div>
+    <div class="input-container">
+      <label for="email" class="req">Email</label>
+      <input id="email" type="email" name="email" required="required" data-validate="email" data-error-wrong="Поле «Email» заполнено не верно" data-error-empty="Поле «Email» не заполнено" data-error-min="Email: не менее 6 символов" data-error-max="Email: не более 37 символов" class="validate"/>
+      <div class="text-error">Поле «Email» не заполнено</div>
+    </div>
+    <div class="service-form__subtitle">* Все поля обязательны для заполнения</div>
+    <!--button.btn(value='Отправить', type='submit', class='btn-white') Отправить-->
+    <button type="submit" class="btn btn-white"><span>Отправить</span></button>
+  </form>
+</div>

@@ -1,0 +1,218 @@
+//dropdown start
+.dropdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    li {
+      margin: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  select {
+    outline: transparentize($elements, 1);
+    overflow: hidden;
+    option {
+      background-color: $white;
+      color: $elements;
+      @include anim;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      display: inline-block;
+      word-wrap: break-word;
+      overflow: hidden;
+      &:hover,
+      &:active,
+      &:focus,
+      &:checked {
+        background-color: $elements;
+        color: $white;
+      }
+      &:disabled {
+        background-color: $grayBG2;
+        color: $textGray;
+        cursor: none;
+      }
+      @include respond-to(tablet-1030) {
+        font-size: 10px;
+      }
+    }
+    &:active,
+    &:focus {
+      &:after{
+        transform: rotate(90deg);
+        @include anim;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    @include respond-to(tablet-1030) {
+      padding: 15px 25px 15px 5px;
+    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: $text;
+    @include anim;
+    &:hover,
+    &:active,
+    &:focus {
+      @include anim;
+      color: $text;
+      text-decoration: unset;
+    }
+  }
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:before {
+      @include anim;
+      order: 2;
+      font-size: 7px;
+      margin-left: 5px;
+    }
+    &-item {
+      order: 1;
+      color: $text;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include fm;
+      @include respond-to(sm-767) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    color: $text;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    @include fb;
+    font-size: 14px;
+    line-height: 16px;
+    @include anim;
+    overflow: hidden;
+    &>span {
+      //margin-right: 5px;
+    }
+    &:before {
+      @include anim;
+      font-weight: 600;
+      font-size: 22px;
+      margin-right: 5px;
+    }
+    &.error {
+      border: 1px solid $attention;
+      @include anim;
+    }
+    &.active {
+      @include anim;
+      overflow: visible;
+      color: $elements;
+      .icon {
+        &::before {
+          transform: rotate(180deg);
+          @include anim;
+          z-index: 0;
+        }
+      }
+      &::after {
+        transform: rotate(180deg);
+        @include anim;
+      }
+    }
+    @include respond-to(lg-1200) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    label {
+      top: -15px;
+      left: 0;
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    top: 25px;
+    box-sizing: border-box;
+    left: 0;
+    display: none;
+    width: 100%;
+    min-width: 160px;
+    background-color: transparent;
+    z-index: 110;
+    border-radius: 8px;
+    padding: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    //border: 1px solid $lines;
+    //box-shadow: $box-shadow;
+  }
+  &__item {
+    color: $text;
+    padding: 8px 0;
+    @include anim;
+    border-radius: 4px;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      background-color: transparent;
+      @include anim;
+    }
+    &.active {
+      .dropdown__text {
+        @include fb;
+        @include anim;
+      }
+    }
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    @include anim;
+  }
+  &_select {
+    .icon {
+      &:before {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+        font-size: 10px;
+        @include anim;
+      }
+    }
+  }
+  &_center {
+    .dropdown__dropdown {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .dropdown__text {
+      justify-content: left;
+    }
+  }
+}
+
+//dropdown end

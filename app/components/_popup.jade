@@ -1,0 +1,36 @@
+include _button
+include _dropdown
+
+// popup SECTION
+.popup-overlay
+    .popup.popup__mail(data-target="popup-mail")
+        .popup-header
+            .subtitle Вашa заявка отправлена!
+        .popup-content
+            .content Наш менеджер скоро свяжется с вами.
+        +button('Вернуться на главную', 'a', 'icon')(class="btn-arr btn-long" href="http://html.myapp.com.ua/kroonk/index1.html")
+        .close-btn.icon.icon-close
+
+    .popup.popup__mail(data-target="popup-callback")
+        .popup-header
+            .title-2.subtitle Консультация по услугам
+        .popup-content
+            .content Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала
+            .popup__form-wrapper
+                .popup__form-img
+                    img.image(title='Консультация', alt='Консультация', data-src='images/other/2.jpeg')
+                form.popup__form.js_validate(action="#")
+                    .input-container
+                        label.req(for='head') Ваше имя
+                        input#head.validate(type='text', name='head', required='required', data-validate='text', data-error-wrong='Недопустимые символы', data-error-empty='Введите колличество символов (2-100)', data-minsign='2', data-maxsign='100')
+                        .text-error Поле  не заполнено
+                    .input-container
+                        label.req(for='phone') Номер телефона
+                        input#phone.validate(type='tel', required='required', data-validate='phone', data-error-wrong='Поле «Телефон» заполнено не верно', data-error-empty='Введите колличество символов(17)')
+                        .text-error Поле  не заполнено
+                    .input-container
+                        label.req(for='email') Email
+                        input#email.validate(type='email', name='email', required='required', data-validate='email', data-error-wrong='Поле «Email» заполнено не верно', data-error-empty='Поле «Email» не заполнено', data-error-min='Email: не менее 6 символов', data-error-max='Email: не более 37 символов')
+                        .text-error Поле «Email» не заполнено
+                    +button('оставить заявку', 'button')(type='submit')
+        .close-btn.icon.icon-close

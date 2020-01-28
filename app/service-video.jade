@@ -1,0 +1,37 @@
+doctype html
+html
+    include components/_head
+    body
+        noscript
+            div
+                strong Для полной функциональности этого сайта необходимо включить JavaScript. Вот
+                a(href='https://artjoker.ua/ru/blog/how-to-enable-javascript/', target='_blank') инструкции,
+                | как включить JavaScript в вашем браузере.
+                link(rel='stylesheet', type='text/css', href='css/without-js.css')
+        // if lte IE 8
+        // p.off-js
+        // | Ваш браузер устарел, пожалуйста
+        // b обновите
+        // |  его.
+        // wrapper start
+        .wrapper.service-page
+            include components/_header
+            main.main
+                include components/_breadcrumbs
+                section.service-page__banner
+                    +breadcrumbs('Главная', 'Каталог', 'Виза в США')
+                    include templates/main/_service-banner-video
+                section.service-page__faq
+                    #stop-top-sidebar
+                    .container
+                        .service-page__faq-title.title-2 Часто задаваемые вопросы
+                        .service-page__faq-wrapper
+                            include templates/main/_faq
+                            include templates/main/_service-form
+                    #stop-bottom-sidebar
+                section.service-page__testimonials
+                    include templates/main/_testimonials
+            include components/_footer
+            include components/_popup
+        include components/_footer-include
+

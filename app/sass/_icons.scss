@@ -1,0 +1,102 @@
+$icon_font_name:"Icons";
+@font-face {
+	font-family:$icon_font_name;
+	src: url('fonts/Icons.eot');
+	src: url('fonts/Icons.eot?#iefix') format('eot'),
+	url('fonts/Icons.woff') format('woff'),
+	url('fonts/Icons.ttf') format('truetype'),
+	url('fonts/Icons.svg#Icons') format('svg');
+}
+%icon-arr-long,
+%icon-arr,
+%icon-cb,
+%icon-close,
+%icon-facebook,
+%icon-insta,
+%icon-linkedin,
+%icon-mail,
+%icon-map,
+%icon-phone,
+%icon-play,
+%icon-search,
+%icon-youtube,
+%last_selector {
+		&:before {
+			font-family:$icon_font_name;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: normal;
+			// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+			text-decoration: none;
+			text-transform: none;
+		}
+	}
+
+%icons_before_after {
+	&:before,
+	&:after {
+		font-family: $icon_font_name;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+%icons_after {
+	&:after {
+		font-family: $icon_font_name;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+%icon-arr-long:before {
+	content:'\E001';
+}
+%icon-arr:before {
+	content:'\E002';
+}
+%icon-cb:before {
+	content:'\E003';
+}
+%icon-close:before {
+	content:'\E004';
+}
+%icon-facebook:before {
+	content:'\E005';
+}
+%icon-insta:before {
+	content:'\E006';
+}
+%icon-linkedin:before {
+	content:'\E007';
+}
+%icon-mail:before {
+	content:'\E008';
+}
+%icon-map:before {
+	content:'\E009';
+}
+%icon-phone:before {
+	content:'\E00A';
+}
+%icon-play:before {
+	content:'\E00B';
+}
+%icon-search:before {
+	content:'\E00C';
+}
+%icon-youtube:before {
+	content:'\E00D';
+}

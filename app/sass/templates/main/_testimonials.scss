@@ -1,0 +1,451 @@
+.testimonials {
+  margin-bottom: 120px;
+  position: relative;
+  @include  respond-to(md) {
+    margin-bottom: 80px;
+  }
+  &:before {
+    background-image: url("../images/quotes.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    width: 15%;
+    height: 20%;
+    z-index: 1;
+  }
+  &__slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__content {
+    width: 35%;
+    margin: 40px auto 70px;
+    text-align: center;
+    @include  respond-to(md) {
+      width: 55%;
+      margin: 40px auto 0px;
+    }
+    @include  respond-to(xs-600) {
+      width: 65%;
+    }
+  }
+  &__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    @include fl;
+    color: $textGray;
+    span {
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .date {
+      background-color: transparent;
+      @include fl;
+      color: $textGray;
+    }
+  }
+  &__big {
+    padding: 10px 0 40px;
+    &-slide {
+      &.slick-slide {
+        padding-top: 30px;
+        @include  respond-to(xs-600) {
+          padding-top: 10px;
+        }
+      }
+      .testimonials {
+        &__img {
+          width: 140px;
+          height: 140px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: white;
+          position: relative;
+          margin: 0 auto;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-image: url(../images/svg-parts/ellipse.svg);
+            transform: translate(-50%, -50%);
+            width: 130%;
+            height: 130%;
+            background-position: 50% 50%;
+            background-size: contain;
+            //background: linear-gradient(60deg, #F7A5B0, #ef4e7b, #EF425A, #FFFFFF, #F7A5B0, #EF425A, #F7A5B0, #FFFFFF);
+            //border-radius: 50%;
+            //z-index: -1;
+            //animation: animatedgradient 3s ease alternate infinite;
+            //background-size: 300% 300%;
+          }
+          @keyframes animatedgradient {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__small {
+    @include  respond-to(md) {
+      display: none;
+    }
+    &-slide {
+      width: auto;
+      height: auto;
+      .testimonials {
+        &__img {
+          position: absolute;
+          z-index: 0;
+          opacity: 0.6;
+          @include anim;
+          transform: scale(1.0);
+          width: 140px;
+          height: 140px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          overflow: hidden;
+          top: 0;
+          left: 0;
+          &:before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            display: block;
+            width: 200%;
+            height: 200%;
+            box-sizing: border-box;
+            margin-left: -50%;
+            margin-top: -50%;
+            border-radius: 40px;
+            background-color: transparentize($elements, 0.8);
+            animation: pulse-ring 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+          }
+        }
+        @keyframes pulse-ring {
+          0% {
+            transform: scale(.33);
+          }
+          80%, 100% {
+            opacity: 0;
+          }
+        }
+      }
+      &:nth-child(1) {
+        .testimonials {
+          &__img {
+            transform: scale(0.9);
+            left: 10%;
+            top: 72%;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .testimonials {
+          &__img {
+            transform: scale(0.8);
+            left: 13%;
+            top: 21%;
+          }
+        }
+      }
+      &:nth-child(3) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 5%;
+            top: 31%;
+          }
+        }
+      }
+      &:nth-child(4) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 76%;
+            top: 0%;
+          }
+        }
+      }
+      &:nth-child(5) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 23%;
+            top: -16%;
+          }
+        }
+      }
+      &:nth-child(6) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 79%;
+            top: 47%;
+          }
+        }
+      }
+      &:nth-child(7) {
+        .testimonials {
+          &__img {
+            transform: scale(0.8);
+            left: 89%;
+            top: 12%;
+          }
+        }
+      }
+      &:nth-child(8) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 0%;
+            top: 0%;
+          }
+        }
+      }
+      &:nth-child(9) {
+        .testimonials {
+          &__img {
+            transform: scale(0.9);
+            left: 60%;
+            top: -5%;
+          }
+        }
+      }
+      &:nth-child(10) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 3%;
+            top: -20%;
+          }
+        }
+      }
+      &:nth-child(11) {
+        .testimonials {
+          &__img {
+            transform: scale(0.8);
+            left: 71%;
+            top: 20%;
+          }
+        }
+      }
+      &:nth-child(12) {
+        .testimonials {
+          &__img {
+            transform: scale(0.8);
+            left: 80%;
+            top: -21%;
+          }
+        }
+      }
+      &:nth-child(13) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 89%;
+            top: 67%;
+          }
+        }
+      }
+      &:nth-child(14) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 20%;
+            top: 59%;
+          }
+        }
+      }
+      &:nth-child(15) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 74%;
+            top: 81%;
+          }
+        }
+      }
+      &:nth-child(16) {
+        .testimonials {
+          &__img {
+            transform: scale(0.8);
+            left: 30%;
+            top: 16%;
+          }
+        }
+      }
+      &:nth-child(17) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 34%;
+            top: 74%;
+          }
+        }
+      }
+      &:nth-child(18) {
+        .testimonials {
+          &__img {
+            transform: scale(0.6);
+            left: 88%;
+            top: 37%;
+          }
+        }
+      }
+      &:nth-child(19) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 64%;
+            top: 70%;
+          }
+        }
+      }
+      &:nth-child(20) {
+        .testimonials {
+          &__img {
+            transform: scale(0.7);
+            left: 1%;
+            top: 85%;
+          }
+        }
+      }
+      &.slick-current {
+        .testimonials {
+          &__img {
+            opacity: 1;
+            @include anim;
+            transform: scale(1.1);
+          }
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        .testimonials {
+          &__img {
+            @include anim;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    &.slick-slider {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .slick-track,
+    .slick-list {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+  }
+  &__img {
+    img {
+      overflow: hidden;
+      border-radius: 50%;
+      width: 105px;
+      height: 105px;
+    }
+  }
+  &-page {
+    &__title {
+      margin-bottom: 50px;
+      .title-2,
+      .title-3,
+      .title-4 {
+        text-align: center;
+      }
+    }
+    &__grid {
+      width: 75%;
+      margin: 0 auto 80px;
+      @include  respond-to(sm) {
+        width: 100%;
+      }
+      button {
+        margin: 40px auto;
+        display: block;
+        box-shadow: 0px 1px 26px rgba(255, 66, 92, 0.44);
+      }
+    }
+  }
+  .slick-arrow {
+    transform: translate(-50%, -50%) rotate(0deg);
+    left: calc(50% + 380px);
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: $grayBG;
+    @include anim;
+    @include  respond-to(md) {
+      left: calc(50% + 280px);
+    }
+    @include  respond-to(xs-690) {
+      left: calc(50% + 210px);
+    }
+    @include  respond-to(xs-480) {
+      left: calc(50% + 165px);
+    }
+    @include  respond-to(xs-380) {
+      left: calc(50% + 130px);
+    }
+    &:before {
+      opacity: 1;
+      font-size: 12px;
+      color: $white !important;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $elements;
+      @include anim;
+    }
+  }
+  .slick-prev {
+    left: calc(50% - 380px);
+    transform: translate(-50%, -50%) rotate(180deg);
+    @include  respond-to(md) {
+      left: calc(50% - 280px);
+    }
+    @include  respond-to(xs-690) {
+      left: calc(50% - 210px);
+    }
+    @include  respond-to(xs-480) {
+      left: calc(50% - 165px);
+    }
+    @include  respond-to(xs-380) {
+      left: calc(50% - 130px);
+    }
+  }
+}

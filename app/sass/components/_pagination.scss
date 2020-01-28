@@ -1,0 +1,155 @@
+//pagination start
+.pagination {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 0;
+    &:before {
+      display: none;
+    }
+  }
+  &_link {
+    width: 100%;
+    height: 100%;
+    color: $text;
+    @include anim;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_item {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    visibility: visible;
+    @include anim;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    background-color: transparent;
+    border: 1px solid $inputLines;
+    border-radius: 5px;
+    &_link {
+      display: inline-block;
+      width: 100%;
+      color: $text;
+    }
+    &.hide {
+      @include anim;
+      display: none;
+    }
+    &.more {
+      border: none;
+      .pagination_link {
+        color: $text;
+      }
+    }
+    &.active {
+      border: 1px solid $elements;
+      @include anim;
+      &:hover,
+      &:active,
+      &:focus {
+        @include anim;
+        border: 1px solid $elements;
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      @include anim;
+      cursor: pointer;
+      border: 1px solid $elements;
+      .pagination_link {
+        @include anim;
+        color: $text;
+      }
+    }
+    &.prev,
+    &.next {
+      background-color: $elements;
+      border: 1px solid $elements;
+      .pagination_link {
+        @include anim;
+        color: $text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        position: relative;
+        &:before {
+          content:'\E001';
+          color: $white;
+          display: block;
+          @include anim;
+          content: '\E001';
+          font-size: 8px;
+          font-family: "Icons";
+          display: inline-block;
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        @include anim;
+        background-color: transparentize($elements, 0.8);
+        border: 1px solid transparentize($elements, 0.8);
+      }
+    }
+    &.next {
+      margin-right: 0;
+      .pagination_link {
+        &:before {
+          transform: rotate(270deg);
+        }
+      }
+    }
+    &.prev {
+      .pagination_link {
+        &:before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &.more {
+      .pagination_link {
+        align-items: flex-end;
+        font-size: 45px;
+        color: $elements;
+        @include anim;
+        line-height: 45px;
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        border: none;
+        .pagination_link {
+          @include anim;
+          color: $text;
+          align-items: flex-end;
+          font-size: 45px;
+          line-height: 45px;
+        }
+      }
+    }
+  }
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0;
+  }
+}
+//pagination end

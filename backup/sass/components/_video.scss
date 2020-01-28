@@ -1,0 +1,82 @@
+.video {
+  height: 500px;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  opacity: 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  @include respond-to(lg-1200) {
+    height: 400px;
+  }
+  @include respond-to(md) {
+    height: 350px;
+  }
+  @include respond-to(sm) {
+    height: 250px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    .video-block-icon {
+      &:before {
+        @include anim;
+        transform: scale(1.3);
+      }
+    }
+  }
+  &-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    @include respond-to(sm) {
+      border-radius: 0;
+    }
+    &-image {
+      width: 110%;
+      position: absolute;
+      max-width: unset;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include respond-to(sm) {
+        width: 160%;
+      }
+    }
+    &-icon {
+      position: absolute;
+      color: $white;
+      width: 100px;
+      height: 100px;
+      background-color: $elements;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 10;
+      @include respond-to(sm) {
+        width: 60px;
+        height: 60px;
+      }
+      &:before {
+        z-index: 5;
+        @include anim;
+        font-size: 35px;
+        @include respond-to(sm) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

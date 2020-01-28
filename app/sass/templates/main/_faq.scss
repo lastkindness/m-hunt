@@ -1,0 +1,171 @@
+.faq {
+  box-shadow: 0px 4px 46px rgba(161, 168, 188, 0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  width: calc(70% - 50px);
+  @include  respond-to(lg-1200) {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  &-page {
+    .content_secondary {
+      padding-top: 0;
+    }
+  }
+  &__content {
+    margin-bottom: 0;
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: upper-roman !important;
+    }
+    &-li {
+      margin: 0;
+      &.active {
+        border-bottom: 1px solid $inputLines;
+        .faq__content {
+          &-title {
+            @include anim;
+            border-left: 4px solid $elements;
+            background-color: $grayBG3;
+            .title-3,
+            h3 {
+              color: $elements;
+              @include fb;
+            }
+            .icon {
+              transform: rotate(-90deg);
+              @include anim;
+              background-color: $elements;
+              color: $white;
+              border: 1px solid $elements;
+            }
+          }
+          &-text {
+            @include anim;
+            background-color: $grayBG3;
+            border-left: 4px solid $elements;
+          }
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          .faq__content-title {
+            .icon {
+              transform: rotate(-90deg);
+              @include anim;
+              background-color: $elements;
+              color: $white;
+              border: 1px solid $elements;
+            }
+          }
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        cursor: pointer;
+        @include anim;
+        .faq__content-title {
+          @include anim;
+          color: $text;
+          .icon {
+            border: 1px solid $elements;
+            color: $elements;
+            @include anim;
+          }
+        }
+      }
+      .icon {
+        border: 1px solid $lines;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        @include anim;
+      }
+    }
+    &-title {
+      color: $elements;
+      padding: 35px 40px 35px 40px;
+      border-bottom: 1px solid $inputLines;
+      @include anim;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        transform: rotate(90deg);
+        @include anim;
+      }
+      .title-3,
+      h3 {
+        margin: 0;
+        width: 90%;
+        color: $text;
+        @include fb;
+        @include anim;
+        @include respond-to(sm) {
+          width: 80%;
+        }
+      }
+      @include  respond-to(lg) {
+        padding: 25px 35px 25px 25px;
+      }
+      @include  respond-to(lg-1360) {
+        padding: 20px 30px 20px 20px;
+      }
+    }
+    &-text {
+      padding: 35px;
+      display: none;
+      color: $text;
+      @include respond-to(sm) {
+        padding: 20px;
+      }
+      @include respond-to(xs-600) {
+        //padding: 0px;
+      }
+      li {
+        color: $text;
+      }
+      ul {
+        margin: 10px 0;
+        padding-left: 15px;
+        li {
+          position: relative;
+          margin-bottom: 10px;
+          font-size: 16px;
+          line-height: 160%;
+          @include respond-to(sm) {
+            font-size: 14px;
+            line-height: 140%;
+          }
+          &:before {
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 6px;
+            left: -15px;
+            background: $elements;
+            top: 8px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+      ol {
+        margin: 10px 0;
+        padding-left: 15px;
+
+      }
+      p {
+
+      }
+      strong {
+        margin: 0 5px;
+      }
+    }
+  }
+  &-wrapper {
+    background-color: #ffffff;
+  }
+}
+

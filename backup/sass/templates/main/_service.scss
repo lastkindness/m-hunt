@@ -1,0 +1,64 @@
+.service {
+  &-page {
+    &.wrapper {
+      margin-top: 0;
+    }
+    .breadcrumbs {
+      position: relative;
+      z-index: 1;
+      &__link {
+        color: transparentize($white, 0.5);
+        &:hover,
+        &:active,
+        &:focus {
+          color: $white;
+        }
+      }
+      &__item {
+        &:before {
+          color: transparentize($white, 0.5);
+        }
+        &.active {
+          .breadcrumbs__link {
+            color: $white;
+          }
+        }
+      }
+    }
+    &__faq {
+      &-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include  respond-to(lg-1200) {
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &__testimonials {
+      margin-bottom: 0;
+    }
+    &__banner {
+      background-color: $footer-bg;
+      position: relative;
+      padding: 120px 0 80px;
+      @include  respond-to(lg-1200) {
+        padding: 120px 0 40px;
+      }
+      &:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        background-image: url("../images/svg-parts/pattern.svg");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+      }
+    }
+  }
+}

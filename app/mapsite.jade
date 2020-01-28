@@ -1,0 +1,51 @@
+doctype html
+html
+  include components/_head
+  body
+    noscript
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript. Вот
+        a(href='https://artjoker.ua/ru/blog/how-to-enable-javascript/', target='_blank') инструкции,
+        | как включить JavaScript в вашем браузере.
+        link(rel='stylesheet', type='text/css', href='css/without-js.css')
+    // if lte IE 8
+    // p.off-js
+    // | Ваш браузер устарел, пожалуйста
+    // b обновите
+    // |  его.
+    // wrapper start
+    .wrapper.mapsite-page
+      include components/_header
+      main.main
+        .container
+          include components/_breadcrumbs
+          +breadcrumbs('Главная', 'Карта сайта')
+        section.main-title
+          .container
+            .title-1.title Карта сайта
+        section.mapsite
+          .mapsite-wrapper
+            .container
+              .mapsite__content
+                ul.mapsite__list
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/index.html') Главная
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/index1.html') Главная старый вариант
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/service.html') Услуга
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/service-video.html') Услуга - видео
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/service-video.html') Отзывы
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/content-page.html') Контентная страница
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/contacts.html') Контакты
+                  li.mapsite__li
+                    a.mapsite__link(href='http://html.myapp.com.ua/m-hunt/404.html') Страница 404
+
+      include components/_footer
+      include components/_popup
+    include components/_footer-include
+

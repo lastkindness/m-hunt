@@ -1,0 +1,38 @@
+@charset "UTF-8";
+@import "variables";
+@import "fonts";
+@import "reset";
+@import "icons";
+@import "global";
+
+//components
+@import "components/_button";
+@import "components/_header";
+@import "components/_footer";
+@import "components/_advantage-item";
+@import "components/_text-content";
+@import "components/_breadcrumbs";
+@import "components/_pagination";
+@import "components/_dropdown";
+@import "components/_popup";
+@import "components/_date";
+@import "components/_video";
+@import "components/_testimonials-item";
+
+//templates
+//main
+@import "templates/main/_main";
+@import "templates/main/_banner";
+@import "templates/main/_banner-new";
+@import "templates/main/_advantage-block";
+@import "templates/main/_integration-slider";
+@import "templates/main/_form";
+@import "templates/main/_testimonials";
+@import "templates/main/_info-banner";
+@import "templates/main/_faq";
+@import "templates/main/_service-banner";
+@import "templates/main/_service-form";
+@import "templates/main/_service";
+@import "templates/main/_service-banner-video";
+@import "templates/main/_contacts";
+@import "templates/main/_404";

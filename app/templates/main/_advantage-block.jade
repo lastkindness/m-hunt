@@ -1,0 +1,19 @@
+include ../../components/_advantage-item
+mixin advantage-block(blockClass, itemsNumber, itemsClass)
+    section.advantage-block(class=blockClass)
+        .container
+            .advantage-block__wrapper
+                .advantage-block__content
+                    .advantage-block__main
+                        .advantage-block__title.title-2 Заголовок для текста о компании
+                        p.advantage-block__text.
+                            Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+                    .advantage-block__grid
+                        -var img = ["team.svg", "kay.svg", "support.svg", "earth.svg"]
+                        -var itemTitle = ["Защищенность данных", "Скорость", "Понятный интерфейс", "Легкость в работе"]
+                        -var text = ["Опыт сотрудников от 5 лет", "Подготовка документации, и непосредственно Вас", "Мы всегда готовы решить любой ваш вопрос", "Европа, Средний восток, Америка"];
+                        -var itemClass = ["color-blue "+itemsClass, "color-green "+itemsClass, "color-red "+itemsClass, "color-purple "+itemsClass];
+                        -for (var i=0; i<itemsNumber; i++)
+                            +advantage-item(img[i], itemTitle[i], text[i], itemClass[i])
+
+

@@ -1,0 +1,18 @@
+.date {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  @include fm;
+  color: $text;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: $grayBG3;
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
+  .time-val {
+    margin-left: 5px;
+  }
+}

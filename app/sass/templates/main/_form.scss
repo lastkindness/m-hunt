@@ -1,0 +1,61 @@
+.feedback-form {
+  background-color: rgba(206, 206, 206, 0.16);
+  padding: 80px 0 200px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__image {
+    width: 50%;
+    position: relative;
+    img {
+      position: absolute;
+      width: 130%;
+      border-radius: 150px;
+      max-width: unset;
+      top: 50%;
+      left: -65%;
+      transform: translateY(-50%);
+    }
+    &:before {
+      width: 140%;
+      height: 640px;
+      content: "";
+      background-color: $elements;
+      display: block;
+      position: absolute;
+      border-radius: 150px;
+      top: 50%;
+      left: calc(-80% - 5px);
+      transform: rotate(10deg) translateY(-50%);
+    }
+  }
+  &__main {
+    width: 50%;
+    position: relative;
+    &:before {
+      background-image: url("../images/logo-gradient.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      position: absolute;
+      right: -50%;
+      top: -30%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+  &__content {
+    margin-bottom: 40px;
+  }
+  &__form {
+    padding-right: 40%;
+    .btn {
+      width: 60%;
+    }
+  }
+}

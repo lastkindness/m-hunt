@@ -1,0 +1,26 @@
+mixin dropdown(classItem, text, tag, idItem)
+    -if (classItem=="dropdown_native")
+        .dropdown.dropdown_native
+            .dropdown__wrapper.js__dropdown
+                span= tag
+                .dropdown__header.icon.icon-normal_arr
+                    span.dropdown__header-item= text[0]
+                ul.dropdown__dropdown(style='display: none;')
+                    - for (var i = 0; i < text.length; i++)
+                        li.dropdown__item
+                            span.dropdown__text= text[i]
+    -else if (classItem=="dropdown_select")
+        .dropdown.dropdown_select
+            .dropdown__wrapper.js__dropdown
+                label= tag
+                select.select.icon.icon-normal_arr(id=idItem)
+                    - for (var i = 0; i < text.length; i++)
+                        option= text[i]
+    -else if (classItem=="dropdown_select_first")
+        .dropdown.dropdown_select
+            .dropdown__wrapper.js__dropdown
+                span= tag
+                select.select.icon.icon-normal_arr.dropdown-menu(id=idItem required="required")
+                    option(value=0 disabled="disabled" selected="selected")= text[0]
+                    - for (var i = 0; i < text.length-1; i++)
+                        option(value=[i+1])= text[i+1]

@@ -1,0 +1,9 @@
+mixin button(text, tag, icon)
+    if tag === 'a'
+        a.btn(href="#")&attributes(attributes)
+            span= text
+    else if tag === 'button'
+        button(type="submit").btn&attributes(attributes)
+            span= text
+    else if tag === 'input'
+        input.btn(value=text type="submit")&attributes(attributes)

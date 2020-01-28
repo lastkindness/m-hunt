@@ -1,0 +1,57 @@
+include _button
+header.header.static
+    .header__mobile
+        .header__burger
+            .burger
+                span
+                span
+                span
+        a.header__logo(href="http://html.myapp.com.ua/m-hunt/index.html")
+            .logo(style="-webkit-mask-image: url(images/logo.svg); mask-image: url(images/logo.svg);")
+        button.header__mobile-pone-icon.btn.btn-white(data-target='callback')
+            .icon.icon-phone
+    .header__main
+        .header__main-wrapper
+            a(href="http://html.myapp.com.ua/m-hunt/index.html").header__logo
+                .logo(style="-webkit-mask-image: url(images/logo.svg); mask-image: url(images/logo.svg);")
+            nav.header__nav
+                ul.header__nav-list
+                    li.header__nav-item
+                        a(href="http://html.myapp.com.ua/m-hunt/service.html") Англия
+                        .icon.icon-arr
+                        ul.header__nav-list-drop
+                            li.header__nav-item-drop
+                                a(href="http://html.myapp.com.ua/m-hunt/content-page.html") Условия
+                            li.header__nav-item-drop
+                                a(href="http://html.myapp.com.ua/m-hunt/content-page.html") Видео и фото
+                    -var mainNav = ["Виза США", "Работа", "For partners", "Отзывы", "Контакты"]
+                    -var mainLinks = ["http://html.myapp.com.ua/m-hunt/service.html", "http://html.myapp.com.ua/m-hunt/service-video.html", "http://html.myapp.com.ua/m-hunt/content-page.html", "http://html.myapp.com.ua/m-hunt/testimonials.html", "http://html.myapp.com.ua/m-hunt/contacts.html"]
+                    -var lastItem = mainNav.length;
+                    -for (var i=0; i<mainNav.length; i++)
+                        li.header__nav-item
+                            a(href=mainLinks[i])= mainNav[i]
+                            .icon.icon-arr
+        .header__main-wrapper
+            ul.social-list
+                li.social-item
+                    a(href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQFzqdDubWYBGQAAAW6eht2IRXPV9pzy_Oud-EfPmqmkdV-V_LFGiuB0-HfrITRwejxViN6Bs30OSHAEXkIfYyryyTfWQfIOtc5Iltir41UGjN_1YRBwi6jzVoC6FNh2wb8DgN0=&originalReferer=https://m-hunt.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fm-hunt%2F" target="_blank" rel="nofollow").icon-linkedin.icon
+                li.social-item
+                    a(href="https://www.facebook.com/mhuntrecruitment/" target="_blank" rel="nofollow").icon-facebook.icon
+                li.social-item
+                    a(href="https://www.instagram.com/mhunt_recruitment/" target="_blank" rel="nofollow").icon-insta.icon
+                li.social-item
+                    a(href="https://www.youtube.com/channel/UCuo4Xk7YjeVP1dSOXYqu_YQ" target="_blank" rel="nofollow").icon-youtube.icon
+            .header__phone
+                .dropdown.dropdown_native.dropdown_center
+                    .dropdown__wrapper.js__dropdown
+                        a.dropdown__link(href="tel:095 434-35-35" target="_blank") +38 (095) 434-35-35
+                        .dropdown__header.icon.icon-arr
+                        ul.dropdown__dropdown(style='display: none;')
+                            li.dropdown__item.active
+                                a.dropdown__text(href="tel:095 436-36-36" target="_blank") +38 (095) 436-36-36
+                            li.dropdown__item
+                                a.dropdown__text(href="tel:095 437-37-37" target="_blank") +38 (095) 437-37-37
+                            li.dropdown__item
+                                a.dropdown__text(href="tel:095 438-38-38" target="_blank") +38 (095) 438-38-38
+            .header__menu-buttons
+                +button('Обратный звонок', 'a')(href='#', data-target='callback', class="btn btn-transparent")

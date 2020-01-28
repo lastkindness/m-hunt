@@ -1,0 +1,69 @@
+include _button
+
+footer.footer
+  .container
+    .footer__wrapper
+      .footer__logo
+          a(href="http://html.myapp.com.ua/m-hunt/index.html")
+            img(data-src='images/logo.svg', alt='M-Hunt', title='M-Hunt')
+          .footer__company
+              span ООО "M-Hunt"
+              span © 2019
+              span Все права защищены.
+      .footer__menu
+        nav.footer__menu-navigation
+          ul.footer__menu-services
+            li.footer__menu-li.footer__title
+                a(href="http://html.myapp.com.ua/m-hunt/service-video.html") Англия
+            -var mainNav = ["Условия", "Видео и фото"]
+            -var mainLinks = ["http://html.myapp.com.ua/m-hunt/service.html", "http://html.myapp.com.ua/m-hunt/service.html"]
+            -for (var i=0; i<mainNav.length; i++)
+              li.footer__menu-li
+                a.footer__menu-link(href=mainLinks[i])= mainNav[i]
+            li.footer__menu-li.footer__title
+              a(href="http://html.myapp.com.ua/m-hunt/service-video.html") Виза США
+            -var mainNav = ["США"]
+            -var mainLinks = ["http://html.myapp.com.ua/m-hunt/service-video.html", "http://html.myapp.com.ua/m-hunt/service-video.html"]
+            -for (var i=0; i<mainNav.length; i++)
+              li.footer__menu-li.active
+                a.footer__menu-link(href=mainLinks[i])= mainNav[i]
+            li.footer__menu-li.footer__title
+              a(href="http://html.myapp.com.ua/m-hunt/service-video.html") Работа
+            -var mainNav = ["США", "ОАЭ, Катар, Бахрейн", "Латвия", "Литва (водители)", "Литва (мясокомбинат)"]
+            -var mainLinks = ["http://html.myapp.com.ua/m-hunt/service.html", "http://html.myapp.com.ua/m-hunt/service.html", "http://html.myapp.com.ua/m-hunt/service-video.html", "http://html.myapp.com.ua/m-hunt/service.html", "http://html.myapp.com.ua/m-hunt/service-video.html"]
+            -for (var i=0; i<mainNav.length; i++)
+              li.footer__menu-li
+                a.footer__menu-link(href=mainLinks[i])= mainNav[i]
+            li.footer__menu-li.footer__title
+              a(href="http://html.myapp.com.ua/m-hunt/service-video.html") Меню
+            -var mainNav = ["For partners", "Отзывы", "Контакты"]
+            -var mainLinks = ["http://html.myapp.com.ua/m-hunt/service-video.html", "http://html.myapp.com.ua/m-hunt/testimonials.html", "http://html.myapp.com.ua/m-hunt/contacts.html"]
+            -for (var i=0; i<mainNav.length; i++)
+              li.footer__menu-li
+               a.footer__menu-link(href=mainLinks[i])= mainNav[i]
+      .footer__contacts
+        .footer__title.title-5 Контакты
+        .footer__phone.footer__contacts-li
+          .icon.icon-phone
+          .footer__phone-wrapper
+              .footer__phone-item
+                a.footer__phone-link(href='tel:+380443835587') +38 (095) 434-35-35
+              .footer__phone-item
+                a.footer__phone-link(href='tel:+380443835587') +38 (067) 787-35-35
+        .footer__email-item.footer__contacts-li
+            .icon.icon-mail
+            a.footer__mail-link(href='mailto:info@m-hunt.com')  info@m-hunt.com
+        .footer__location.footer__contacts-li
+            .icon.icon-map
+            span г. Харьков, ул.Лермонтовская, 7
+        .footer__social
+            ul.social-list
+              li.social-item
+                a(href="https://www.instagram.com/" target="_blank" rel="nofollow").icon-insta.icon
+              li.social-item
+                a(href="https://www.facebook.com/" target="_blank" rel="nofollow").icon-facebook.icon
+              li.social-item
+                a(href="https://www.linkedin.com/" target="_blank" rel="nofollow").icon-linkedin.icon
+      .footer__up
+        .go-to-top
+

@@ -1,0 +1,7 @@
+mixin advantage-item(img, itemTitle, text, itemClass)
+    .advantage-item(class=itemClass)
+        .advantage-item__img
+            .advantage-item__icon(style="-webkit-mask-image: url(images/content-icons/"+img+"); mask-image: url(images/content-icons/"+img+");")
+        .advantage-item__content
+            .advantage-item__title.title-4= itemTitle
+            p.advantage-item__text= text

@@ -1,0 +1,18 @@
+include _button
+
+mixin pagination()
+    .pagination_wrapper(class = attributes.class)
+        ul.pagination
+            li.pagination_item.prev
+                a(href='#').pagination_link
+            li.pagination_item.active
+                a(href='#').pagination_link= 1
+            - for (var i = 2; i <= 3; i++)
+            li.pagination_item
+                a(href='#').pagination_link= i
+            li.pagination_item.more
+                a(href='#').pagination_link ...
+            li.pagination_item
+                a(href='#').pagination_link 10
+            li.pagination_item.next
+                a(href='#').pagination_link

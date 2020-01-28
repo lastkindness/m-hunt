@@ -1,0 +1,42 @@
+.error {
+  &-page {
+    .main {
+      position: relative;
+    }
+    .error {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      @include  respond-to(xs) {
+        width: 100%;
+      }
+    }
+  }
+  &__img {
+    img {
+      margin: 0 auto;
+    }
+  }
+  &__content {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    @include  respond-to(md) {
+      width: 100%;
+    }
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 32px;
+    color: $text;
+    text-align: center;
+    @include  respond-to(xs) {
+      font-size: 25px;
+      line-height: 28px;
+    }
+  }
+  &__text {
+    margin-bottom: 40px;
+  }
+}

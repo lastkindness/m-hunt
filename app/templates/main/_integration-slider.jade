@@ -1,0 +1,11 @@
+section.integration-slider
+    .container
+        .integration-slider__wrapper
+            .integration-slider__title.title-2 Партнёры
+            .integration-slider__list.js-integration-slider
+                -var img = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"]
+                -var itemTitle = ["Партнёр 1", "Партнёр 2", "Партнёр 3", "Партнёр 4", "Партнёр 5", "Партнёр 6"]
+                -for (var i=0; i<img.length; i++)
+                    a.integration-slider__item(htef='#')
+                        .integration-slider__img
+                            img(data-src="images/partners/"+img[i] alt=itemTitle[i] title=itemTitle[i])

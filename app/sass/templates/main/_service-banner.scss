@@ -1,0 +1,82 @@
+ .service {
+   &-banner {
+      position: relative;
+     z-index: 1;
+     &__wrapper {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 85%;
+       @include  respond-to(lg-1200) {
+         width: 100%;
+       }
+       @include  respond-to(sm) {
+         flex-wrap: wrap;
+       }
+     }
+     &__title {
+       @include black;
+       font-size: 64px;
+       margin: 40px 0;
+       color: $white;
+       @include  respond-to(sm) {
+         font-size: 64px;
+         line-height: 70px;
+       }
+       @include  respond-to(xs) {
+         font-size: 36px;
+         line-height: 110%;
+         margin: 20px 0;
+       }
+     }
+     &__content {
+       width: 50%;
+       @include  respond-to(sm) {
+         width: 100%;
+         margin-bottom: 40px;
+       }
+       p {
+         color: transparentize($white, 0.2);
+         font-size: 16px;
+         line-height: 32px;
+         @include fm;
+         @include  respond-to(sm) {
+           font-size: 14px;
+           line-height: 18px;
+         }
+       }
+     }
+     &__image {
+       width: calc(50% - 100px);
+       position: relative;
+       @include  respond-to(md) {
+         width: calc(50% - 50px);
+       }
+       @include  respond-to(sm) {
+         width: 70%;
+         margin: 0 auto;
+       }
+       @include  respond-to(xs) {
+         width: 100%;
+       }
+       &:after {
+         width: 102%;
+         height: 102%;
+         background: linear-gradient(0deg, #203B4E, #203B4E);
+         display: block;
+         content: "";
+         position: absolute;
+         border-radius: 16px;
+         top: 50%;
+         left: 50%;
+         z-index: -1;
+         transform: translate(-50%, -50%) rotate(6.44deg);
+       }
+       img{
+         position: relative;
+         z-index: 0;
+         border-radius: 16px;
+       }
+     }
+   }
+ }

@@ -1,0 +1,25 @@
+include ../../components/_button
+.service-form.auto-fix-sidebar
+    .service-form__logo
+        .logo(style="-webkit-mask-image: url(images/logo-small.svg); mask-image: url(images/logo-small.svg);")
+    .service-form__title Оставить заявку
+    form.service-form__form.js_validate(action="#")
+        .input-container
+            label.req(for='name') Имя
+            input#name.validate(type='text', name='name', required='required', data-validate='text', data-error-wrong='Недопустимые символы', data-error-empty='Введите колличество символов (2-100)', data-minsign='2', data-maxsign='100')
+            .text-error Поле  не заполнено
+        .input-container
+            label.req(for='surname') Фамилия
+            input#surname.validate(type='text', name='surname', required='required', data-validate='text', data-error-wrong='Недопустимые символы', data-error-empty='Введите колличество символов (2-100)', data-minsign='2', data-maxsign='100')
+            .text-error Поле  не заполнено
+        .input-container
+            label.req(for='phone') Номер телефона
+            input#phone.validate(type='tel', required='required', data-validate='phone', data-error-wrong='Поле «Телефон» заполнено не верно', data-error-empty='Введите колличество символов(17)')
+            .text-error Поле  не заполнено
+        .input-container
+            label.req(for='email') Email
+            input#email.validate(type='email', name='email', required='required', data-validate='email', data-error-wrong='Поле «Email» заполнено не верно', data-error-empty='Поле «Email» не заполнено', data-error-min='Email: не менее 6 символов', data-error-max='Email: не более 37 символов')
+            .text-error Поле «Email» не заполнено
+        .service-form__subtitle * Все поля обязательны для заполнения
+        //button.btn(value='Отправить', type='submit', class='btn-white') Отправить
+        +button('Отправить', 'button')(type='submit', class="btn-white")

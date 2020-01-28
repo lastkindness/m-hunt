@@ -1,0 +1,15 @@
+mixin testimonials-item(img, itemTitle, text, itemCity, itemDate)
+    .testimonials-item(class=itemClass)
+        .testimonials-item__img
+            .testimonials-item__icon
+                img(data-src="images/portraits/" + img alt=itemTitle title=itemTitle)
+            .testimonials-item__main
+                .testimonials-item__title-block
+                    .testimonials-item__title.title-4= itemTitle
+                    .testimonials-item__subtitle
+                        .testimonials-item__city= itemCity
+                        .testimonials-item__date= itemDate
+                .testimonials-item__tag
+                    span какой-то тег
+        .testimonials-item__content
+            p.testimonials-item__text= text

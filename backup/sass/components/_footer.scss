@@ -1,0 +1,228 @@
+//footer start
+.footer {
+  background-color: $footer-bg;
+  color: transparentize($white, 0.8);
+  font-size: 14px;
+  line-height: 14px;
+  padding: 80px 0;
+  order: 2;
+  @include fr;
+  position: relative;
+  @include respond-to(xs-690) {
+    padding: 40px 0;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  &:before {
+    background-image: url("../images/logo-gradient-dark.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 90%;
+    z-index: 0;
+    @include respond-to(xs-690) {
+      display: none;
+    }
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  p {
+    @include fr;
+    color: transparentize($white, 0.4);
+    font-size: 16px;
+    line-height: 160%;
+    text-decoration: none;
+  }
+  a {
+    @include fm;
+    color: transparentize($white, 0.2);
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+    @include anim;
+    &:hover,
+    &:active,
+    &:focus {
+      color: transparentize($white, 0);
+      @include anim;
+    }
+  }
+  &__title {
+    color: transparentize($white, 0.1);
+  }
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    @include respond-to(md){
+      flex-wrap: wrap;
+    }
+  }
+  &__logo {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include respond-to(lg-1250){
+      width: 15%;
+    }
+    @include respond-to(md){
+      order: 2;
+      width: 100%;
+    }
+    img {
+      width: 180px;
+    }
+    a {
+      margin-bottom: 40px;
+      @include respond-to(md){
+        display: none;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        transform: scale(1.1);
+        @include anim;
+      }
+    }
+  }
+  &__up {
+    width: 10%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    @include respond-to(md){
+      display: none;
+    }
+  }
+  &__menu {
+    width: 35%;
+    @include respond-to(lg-1250){
+      width: 45%;
+    }
+    @include respond-to(md){
+      order: 0;
+      width: 60%;
+    }
+    @include respond-to(xs-600){
+      width: 100%;
+    }
+    &-navigation {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      @include respond-to(xs-600){
+        flex-wrap: wrap;
+      }
+      &-item {
+        a {
+          @include fr;
+          text-decoration: underline;
+        }
+      }
+    }
+    &-li {
+      &.active {
+        a {
+          color: transparentize($white, 0);
+          @include fm;
+          @include anim;
+        }
+      }
+    }
+    &-services {
+      margin-bottom: 35px;
+    }
+  }
+  &__contacts {
+    width: 20%;
+    @include respond-to(md){
+      order: 1;
+      width: 35%;
+    }
+    @include respond-to(xs-600){
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    &-li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .icon {
+        width: 35px;
+        color: transparentize($white, 0.2);
+      }
+    }
+  }
+  &__phone {
+    &-item {
+      margin-bottom: 15px;
+    }
+  }
+  &__email {
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+  &__location {
+    font-size: 16px;
+    line-height: 19px;
+    color: transparentize($white, 0.2);
+    @include fr;
+  }
+  &__social {
+    margin-top: 30px;
+    .social-list {
+      justify-content: flex-start;
+    }
+    .social-item {
+      background-color: $social-item;
+      padding: 10px !important;
+      @include anim;
+      a {
+        width: 20px;
+        height: 20px;
+        @include anim;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        @include anim;
+        background-color: $elements;
+        a {
+          color: $white;
+          @include anim;
+        }
+      }
+    }
+  }
+  &__company {
+    span {
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+//footer end

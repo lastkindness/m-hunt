@@ -1,0 +1,30 @@
+doctype html
+html
+  include components/_head
+  body
+    noscript
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript. Вот
+        a(href='https://artjoker.ua/ru/blog/how-to-enable-javascript/', target='_blank') инструкции,
+        | как включить JavaScript в вашем браузере.
+        link(rel='stylesheet', type='text/css', href='css/without-js.css')
+    // if lte IE 8
+    // p.off-js
+    // | Ваш браузер устарел, пожалуйста
+    // b обновите
+    // |  его.
+    // wrapper start
+    .wrapper.main-page
+      include components/_header
+      main.main
+        include components/_text-content
+        include templates/main/_banner-new
+        include templates/main/_advantage-block
+        +advantage-block("middle left", "4", "middle")
+        include templates/main/_integration-slider
+        include templates/main/_info-banner
+        include templates/main/_testimonials
+
+      include components/_footer
+      include components/_popup
+    include components/_footer-include

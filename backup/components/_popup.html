@@ -1,0 +1,43 @@
+
+<!-- popup SECTION-->
+<div class="popup-overlay">
+  <div data-target="popup-mail" class="popup popup__mail">
+    <div class="popup-header">
+      <div class="subtitle">Вашa заявка отправлена!</div>
+    </div>
+    <div class="popup-content">
+      <div class="content">Наш менеджер скоро свяжется с вами.</div>
+    </div><a href="http://html.myapp.com.ua/kroonk/index1.html" class="btn btn-arr btn-long"><span>Вернуться на главную</span></a>
+    <div class="close-btn icon icon-close"></div>
+  </div>
+  <div data-target="popup-callback" class="popup popup__mail">
+    <div class="popup-header">
+      <div class="title-2 subtitle">Консультация по услугам</div>
+    </div>
+    <div class="popup-content">
+      <div class="content">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала</div>
+      <div class="popup__form-wrapper">
+        <div class="popup__form-img"><img title="Консультация" alt="Консультация" data-src="images/other/2.jpeg" class="image"/></div>
+        <form action="#" class="popup__form js_validate">
+          <div class="input-container">
+            <label for="head" class="req">Ваше имя</label>
+            <input id="head" type="text" name="head" required="required" data-validate="text" data-error-wrong="Недопустимые символы" data-error-empty="Введите колличество символов (2-100)" data-minsign="2" data-maxsign="100" class="validate"/>
+            <div class="text-error">Поле  не заполнено</div>
+          </div>
+          <div class="input-container">
+            <label for="phone" class="req">Номер телефона</label>
+            <input id="phone" type="tel" required="required" data-validate="phone" data-error-wrong="Поле «Телефон» заполнено не верно" data-error-empty="Введите колличество символов(17)" class="validate"/>
+            <div class="text-error">Поле  не заполнено</div>
+          </div>
+          <div class="input-container">
+            <label for="email" class="req">Email</label>
+            <input id="email" type="email" name="email" required="required" data-validate="email" data-error-wrong="Поле «Email» заполнено не верно" data-error-empty="Поле «Email» не заполнено" data-error-min="Email: не менее 6 символов" data-error-max="Email: не более 37 символов" class="validate"/>
+            <div class="text-error">Поле «Email» не заполнено</div>
+          </div>
+          <button type="submit" class="btn"><span>оставить заявку</span></button>
+        </form>
+      </div>
+    </div>
+    <div class="close-btn icon icon-close"></div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+/*Variables start*/
+
+/*COLORS start*/
+$white: #FFFFFF;
+$attention: #EE5F3A;
+$action: #BE3547;
+$style1: #5C1A8D;
+$style2: #EF425A;
+$style3:#0039FF;
+$style4: #00A94F;
+$textGray: rgba(0, 0, 0, 0.5);
+$lines: #E7E7E7;
+$inputLines: #E7E7E7;
+$text: rgba(0, 0, 0, 0.9);
+$accent: #FFEBEE;
+$elements: #EF425A;
+$grayBG: rgba(206, 206, 206, 0.84);
+$grayBG2: rgba(0, 0, 0, 0.8);
+$grayBG3:  #F8FBFE;
+$headerGradient: linear-gradient(180deg, #000000 -37.55%, rgba(0, 0, 0, 0) 87.12%);
+$footer-bg: #0A2539;
+$social-item: #1B415C;
+
+/*COLORS end*/
+
+/*ANIMATIONS start*/
+@mixin anim{
+	transition: all .3s ease;
+}
+@mixin anim-linear{
+	transition: all .3s linear;
+}
+/*ANIMATIONS end*/
+
+/*SHADOWS start*/
+$box-shadow-none: 0px 0px 0px rgba(0, 0, 0, 0);
+$box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.12);
+/*SHADOWS end*/
+
+
+/*FONTS start*/
+@mixin black {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 900;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fxb {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 800;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fsb {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 700;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fb {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 600;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fm {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 500;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fr {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 400;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fl {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 300;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin fel {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 200;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@mixin thin {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 100;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+/*FONTS end*/
+
+
+/*=======================START-MEDIA=====================*/
+@mixin respond-to($media) {
+	@if $media == xs-370 {
+		@media only screen and (max-width: 370px) {
+			@content;
+		}
+	}
+	@if $media == xs-380 {
+		@media only screen and (max-width: 380px) {
+			@content;
+		}
+	}
+	@if $media == xs-480 {
+		@media only screen and (max-width: 480px) {
+			@content;
+		}
+	}
+	@if $media == xs {
+		@media only screen and (max-width: 576px) {
+			@content;
+		}
+	}
+	@if $media == xs-600 {
+		@media only screen and (max-width: 600px) {
+			@content;
+		}
+	} @else if $media == xs-690 {
+		@media only screen and (max-width: 691px) {
+			@content;
+		}
+	} @else if $media == sm-767 {
+		@media only screen and (max-width: 767px) {
+			@content;
+		}
+	} @else if $media == sm {
+		@media only screen and (max-width: 768px) {
+			@content;
+		}
+	} @else if $media == md {
+		@media only screen and (max-width: 993px) {
+			@content;
+		}
+	} @else if $media == tablet {
+		@media only screen and (max-width: 1023px) {
+			@content;
+		}
+	} @else if $media == tablet-1030 {
+		@media only screen and (max-width: 1030px) {
+			@content;
+		}
+	} @else if $media == max-height-768 {
+		@media only screen and (max-height: 768px) {
+			@content;
+		}
+	} @else if $media == lg-1200 {
+		@media only screen and (max-width: 1200px) {
+			@content;
+		}
+	} @else if $media == lg-1250 {
+		@media only screen and (max-width: 1250px) {
+			@content;
+		}
+	} @else if $media == lg-1360 {
+		@media only screen and (max-width: 1367px) {
+			@content;
+		}
+	} @else if $media == lg {
+		@media only screen and (max-width: 1560px) {
+			@content;
+		}
+	} @else if $media == lg-1700 {
+		@media only screen and (max-width: 1700px) {
+			@content;
+		}
+	} @else if $media == lg-1920 {
+		@media only screen and (max-width: 1919px) {
+			@content;
+		}
+	}
+}
+/*=======================END-MEDIA=====================*/
+
+/*Variables end*/
+

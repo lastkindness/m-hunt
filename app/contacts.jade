@@ -1,0 +1,74 @@
+doctype html
+html
+    include components/_head
+    body
+        noscript
+            div
+                strong Для полной функциональности этого сайта необходимо включить JavaScript. Вот
+                a(href='https://artjoker.ua/ru/blog/how-to-enable-javascript/', target='_blank') инструкции,
+                | как включить JavaScript в вашем браузере.
+                link(rel='stylesheet', type='text/css', href='css/without-js.css')
+        .wrapper.contacts-page
+            include components/_header
+            main.main
+                include components/_breadcrumbs
+                +breadcrumbs('Главная', 'Контакты')
+                include components/_button
+                .contacts__content
+                    .container
+                        section.contacts__info-wrapper
+                            .contacts__info
+                                .title-2.title Контакты
+                                ul.contacts__info-list
+                                    li.contacts__info-li
+                                        .icon.icon-phone
+                                        .contacts__info-content
+                                            a(href="tel:+380954343535") +38 (095) 434-35-35
+                                            a(href="tel:+380677873535") +38 (067) 787-35-35
+                                    li.contacts__info-li
+                                        .icon.icon-mail
+                                        .contacts__info-content
+                                            a(href="mailto:info@m-hunt.com") info@m-hunt.com
+                                    li.contacts__info-li
+                                        .icon.icon-map
+                                        .contacts__info-content
+                                            span бизнес-центр "Европейский" Красношкольная набережная, 24 офис 802, Харьков, Харьковская область, 61000
+                                ul.social-list
+                                    li.social-item
+                                        a(href="https://www.instagram.com/mhunt_recruitment/" target="_blank" rel="nofollow").icon-insta.icon
+                                    li.social-item
+                                        a(href="https://www.facebook.com/mhuntrecruitment/" target="_blank" rel="nofollow").icon-facebook.icon
+                                    li.social-item
+                                        a(href="https://www.linkedin.com/company/m-hunt/" target="_blank" rel="nofollow").icon-linkedin.icon
+                                    li.social-item
+                                        a(href="https://www.youtube.com/channel/UCuo4Xk7YjeVP1dSOXYqu_YQ" target="_blank" rel="nofollow").icon-youtube.icon
+                            .contacts__form-wrapper
+                                .contacts__form-title.title-2 Свяжитесь с нами
+                                form.contacts__form.js_validate
+                                    .input-container
+                                        label.req(for='name') Имя
+                                        input#name.validate(type='text', name='name', required='required', data-validate='text', data-error-wrong='Недопустимые символы', data-error-empty='Введите колличество символов (2-100)', data-minsign='2', data-maxsign='100')
+                                        .text-error Поле  не заполнено
+                                    .input-container
+                                        label.req(for='surname') Фамилия
+                                        input#name.validate(type='text', name='surname', required='required', data-validate='text', data-error-wrong='Недопустимые символы', data-error-empty='Введите колличество символов (2-100)', data-minsign='2', data-maxsign='100')
+                                        .text-error Поле  не заполнено
+                                    .input-container
+                                        label.req(for='phone') Телефон
+                                        input#phone.validate(type='tel', required='required', data-validate='phone', data-error-wrong='Поле «Телефон» заполнено не верно', data-error-empty='Введите колличество символов(17)')
+                                        .text-error Поле  не заполнено
+                                    .input-container
+                                        label.req(for='email') E-mail
+                                        input#email.validate(type='email', name='email', required='required', data-validate='email', data-error-wrong='Поле «Email» заполнено не верно', data-error-empty='Поле «Email» не заполнено', data-error-min='Email: не менее 6 символов', data-error-max='Email: не более 37 символов')
+                                        .text-error Поле «Email» не заполнено
+                                    .contacts__form-subtitle * Все поля обязательны для заполнения
+                                    +button('Отправить', 'button')(data-target='mail', type="submit")
+                    //section.contacts__maps
+                        #map(data-coords='50.006140, 36.252353')
+                    section.contacts__map
+                        iframe(width='100%', height='600', src='https://maps.google.com/maps?width=100%&height=600&hl=en&coord=49.981733, 36.234868&q=%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%22%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%22%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%2C%2024%20%D0%BE%D1%84%D0%B8%D1%81%20802%2C%20%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%2C%20%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%2061000+(M-hunt)&ie=UTF8&t=&z=17&iwloc=B&output=embed', frameborder='0', scrolling='no', marginheight='0', marginwidth='0') <a href="https://www.maps.ie/coordinates.html">find my coordinates</a>
+
+            include components/_footer
+            include components/_popup
+        include components/_footer-include
+
